@@ -1,0 +1,177 @@
+﻿!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KBA: How to Install Windows</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        }
+
+        .accordion-button.open + .accordion-content {
+            max-height: 500px; /* Adjust as needed */
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .accordion-button .fa-chevron-down {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .accordion-button.open .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-4 sm:p-6 md:p-8 max-w-4xl">
+        <!-- Header -->
+        <header class="mb-6">
+            <h1 class="text-3xl font-bold text-gray-900">KBA: How to Install Windows</h1>
+            
+        </header>
+
+        
+
+        <!-- Objective & Prerequisites -->
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+                <h2 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                    <i class="fas fa-bullseye-pointer mr-3 text-blue-500"></i> Objective
+                </h2>
+                <p class="text-gray-600">To perform a clean installation of Windows and configure it for the corporate environment, including all necessary updates and domain joining.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+                <h2 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                    <i class="fas fa-list-check mr-3 text-blue-500"></i> Prerequisites
+                </h2>
+                <ul class="list-disc list-inside text-gray-600 space-y-1">
+                    <li>Laptop connected to a power source.</li>
+                    <li>Windows installation media available.</li>
+                    <li>Corporate domain credentials (for final step).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Steps Accordion -->
+        <div class="space-y-4">
+            <!-- Step 1 -->
+            <div class="bg-white rounded-lg border border-gray-200 shadow-sm">
+                <button class="accordion-button w-full flex justify-between items-center text-left p-5 font-semibold text-gray-700 hover:bg-gray-50 rounded-lg">
+                    <span class="flex items-center"><i class="fas fa-cog w-6 text-center mr-3 text-lg text-blue-500"></i> Step 1: Install Windows from Setup</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content px-5 text-gray-600">
+                    <ol class="list-decimal list-inside space-y-3 pl-4 border-l-2 border-blue-200">
+                        <li>Power on the laptop and press <strong>Enter</strong> to access the Startup Interrupt Menu.</li>
+                        <li>Press <strong>F1</strong> to enter the BIOS Setup Utility.</li>
+                        <li>Navigate to <strong>Startup > Boot</strong>.</li>
+                        <li>Change the 1st Boot Priority to the correct drive (e.g., hard drive/USB).</li>
+                        <li>Save changes and exit. The laptop will boot into Windows Setup.</li>
+                        <li>Accept the license terms.</li>
+                        <li>Choose <strong>"Custom: Install Windows only (advanced)"</strong>.</li>
+                        <li>Select the largest partition, click <strong>Format</strong>, then click <strong>Next</strong>.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="bg-white rounded-lg border border-gray-200 shadow-sm">
+                <button class="accordion-button w-full flex justify-between items-center text-left p-5 font-semibold text-gray-700 hover:bg-gray-50 rounded-lg">
+                    <span class="flex items-center"><i class="fas fa-wifi w-6 text-center mr-3 text-lg text-blue-500"></i> Step 2: Configure Network Drivers</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content px-5 text-gray-600">
+                    <p>After Windows setup completes, attempt to connect to a Wi-Fi network. If networking is unavailable, you must manually install the appropriate Wi-Fi drivers for the laptop model.</p>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="bg-white rounded-lg border border-gray-200 shadow-sm">
+                <button class="accordion-button w-full flex justify-between items-center text-left p-5 font-semibold text-gray-700 hover:bg-gray-50 rounded-lg">
+                    <span class="flex items-center"><i class="fas fa-cloud-arrow-down w-6 text-center mr-3 text-lg text-blue-500"></i> Step 3: Run Windows Update</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content px-5 text-gray-600">
+                    <ol class="list-decimal list-inside space-y-3 pl-4 border-l-2 border-blue-200">
+                        <li>Go to <strong>Settings > Windows Update</strong>.</li>
+                        <li>Click <strong>Check for updates</strong> and wait for all items to download and install.</li>
+                        <li><strong>Reboot</strong> the computer when prompted.</li>
+                        <li>Repeat this process until no more updates are found.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="bg-white rounded-lg border border-gray-200 shadow-sm">
+                <button class="accordion-button w-full flex justify-between items-center text-left p-5 font-semibold text-gray-700 hover:bg-gray-50 rounded-lg">
+                    <span class="flex items-center"><i class="fas fa-microchip w-6 text-center mr-3 text-lg text-blue-500"></i> Step 4: Update BIOS & System Drivers (Lenovo)</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content px-5 text-gray-600">
+                    <ol class="list-decimal list-inside space-y-3 pl-4 border-l-2 border-blue-200">
+                        <li>In the Windows search bar, find and open the <strong>Lenovo System Update</strong> utility.</li>
+                        <li>Scan for new updates.</li>
+                        <li>Apply all recommended and critical updates.</li>
+                        <li><strong>Reboot</strong> if required to complete the installations.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="bg-white rounded-lg border border-gray-200 shadow-sm">
+                <button class="accordion-button w-full flex justify-between items-center text-left p-5 font-semibold text-gray-700 hover:bg-gray-50 rounded-lg">
+                    <span class="flex items-center"><i class="fas fa-sitemap w-6 text-center mr-3 text-lg text-blue-500"></i> Step 5: Join Corporate Domain</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content px-5 text-gray-600">
+                    <ol class="list-decimal list-inside space-y-3 pl-4 border-l-2 border-blue-200">
+                        <li>Search for and open <strong>"Access work or school"</strong>.</li>
+                        <li>Rename the computer to the standard format: <strong>N10-[SerialNumber]</strong>.</li>
+                        <li>Join the computer to the domain: <strong>UNIONAGENER.com</strong>.</li>
+                        <li>Provide domain administrator credentials when prompted.</li>
+                        <li><strong>Reboot</strong> the computer one final time to apply all changes.</li>
+                    </ol>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Completion Message -->
+        <div class="mt-8 bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded-r-lg" role="alert">
+            <p class="font-bold">Process Complete</p>
+            <p>The laptop is now fully configured and ready for use.</p>
+        </div>
+    </div>
+
+    <script>// JavaScript for accordion functionality
+        const accordionButtons = document.querySelectorAll('.accordion-button');
+
+        accordionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Close other open accordions
+                accordionButtons.forEach(otherButton => {
+                    if (otherButton !== button && otherButton.classList.contains('open')) {
+                        otherButton.classList.remove('open');
+                    }
+                });
+
+                // Toggle the clicked accordion
+                button.classList.toggle('open');
+            });
+        });</script>
+</body>
+</html>
